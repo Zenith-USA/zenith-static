@@ -17,38 +17,41 @@
             color: #1a202c;
             background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
             min-height: 100vh;
+            overflow-x: hidden;
         }
         
         .container {
             max-width: 1000px;
             margin: 0 auto;
-            padding: 3rem 2rem;
+            padding: 2rem 1rem;
         }
         
         .header {
             text-align: center;
-            margin-bottom: 4rem;
+            margin-bottom: 3rem;
         }
         
         h1 {
             color: #f8fafc;
-            font-size: 3.5rem;
+            font-size: clamp(2.2rem, 6vw, 3.5rem);
             margin-bottom: 1rem;
             font-weight: 600;
             letter-spacing: -0.025em;
+            line-height: 1.1;
         }
         
         .tagline {
             color: #94a3b8;
-            font-size: 1.3rem;
+            font-size: clamp(1rem, 3vw, 1.3rem);
             font-weight: 300;
             margin-bottom: 3rem;
+            line-height: 1.4;
         }
         
         .coming-soon {
             background: rgba(30, 41, 59, 0.95);
             border-radius: 20px;
-            padding: 4rem 3rem;
+            padding: clamp(2rem, 5vw, 4rem) clamp(1.5rem, 4vw, 3rem);
             margin-bottom: 3rem;
             backdrop-filter: blur(10px);
             box-shadow: 0 20px 40px rgba(0,0,0,0.3);
@@ -59,13 +62,14 @@
         .coming-soon h2 {
             color: #f8fafc;
             margin-bottom: 1rem;
-            font-size: 2.2rem;
+            font-size: clamp(1.6rem, 4vw, 2.2rem);
             font-weight: 600;
+            line-height: 1.2;
         }
         
         .coming-soon p {
             color: #94a3b8;
-            font-size: 1.2rem;
+            font-size: clamp(1rem, 2.5vw, 1.2rem);
             margin-bottom: 3rem;
             line-height: 1.7;
             max-width: 600px;
@@ -75,15 +79,15 @@
         
         .metrics-preview {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: clamp(1rem, 3vw, 2rem);
             margin-bottom: 2rem;
         }
         
         .metric-circle {
             background: rgba(30, 41, 59, 0.7);
             border-radius: 15px;
-            padding: 2rem;
+            padding: clamp(1.5rem, 3vw, 2rem);
             text-align: center;
             position: relative;
             border: 1px solid rgba(248, 250, 252, 0.2);
@@ -96,8 +100,8 @@
         }
         
         .circle-chart {
-            width: 120px;
-            height: 120px;
+            width: clamp(100px, 15vw, 120px);
+            height: clamp(100px, 15vw, 120px);
             margin: 0 auto 1.5rem;
             position: relative;
         }
@@ -105,12 +109,12 @@
         .circle-bg {
             fill: none;
             stroke: #e2e8f0;
-            stroke-width: 8;
+            stroke-width: clamp(6, 1vw, 8);
         }
         
         .circle-progress {
             fill: none;
-            stroke-width: 8;
+            stroke-width: clamp(6, 1vw, 8);
             stroke-linecap: round;
             transform: rotate(-90deg);
             transform-origin: 50% 50%;
@@ -119,17 +123,14 @@
         
         .strain .circle-progress {
             stroke: #ef4444;
-            stroke-dasharray: 220, 283;
         }
         
         .recovery .circle-progress {
             stroke: #22c55e;
-            stroke-dasharray: 254, 283;
         }
         
         .sleep .circle-progress {
             stroke: #3b82f6;
-            stroke-dasharray: 212, 283;
         }
         
         .metric-value {
@@ -137,7 +138,7 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            font-size: 1.8rem;
+            font-size: clamp(1.2rem, 2.5vw, 1.8rem);
             font-weight: 700;
             color: #f8fafc;
         }
@@ -145,59 +146,61 @@
         .metric-circle h3 {
             color: #f8fafc;
             margin-bottom: 0.5rem;
-            font-size: 1.3rem;
+            font-size: clamp(1.1rem, 2vw, 1.3rem);
             font-weight: 600;
         }
         
         .metric-circle p {
             color: #94a3b8;
-            font-size: 0.95rem;
+            font-size: clamp(0.85rem, 1.5vw, 0.95rem);
             margin: 0;
+            line-height: 1.4;
         }
         
         .features {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            gap: clamp(1.5rem, 3vw, 2rem);
             margin-bottom: 3rem;
         }
         
         .feature {
             background: rgba(248, 250, 252, 0.05);
-            padding: 2rem;
+            padding: clamp(1.5rem, 3vw, 2rem);
             border-radius: 15px;
             border: 1px solid rgba(248, 250, 252, 0.1);
             backdrop-filter: blur(5px);
         }
         
         .feature-icon {
-            width: 50px;
-            height: 50px;
+            width: clamp(40px, 8vw, 50px);
+            height: clamp(40px, 8vw, 50px);
             background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
             border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
             margin-bottom: 1.5rem;
-            font-size: 1.3rem;
+            font-size: clamp(1.1rem, 2vw, 1.3rem);
         }
         
         .feature h3 {
             color: #f8fafc;
             margin-bottom: 0.8rem;
-            font-size: 1.2rem;
+            font-size: clamp(1rem, 2vw, 1.2rem);
             font-weight: 600;
         }
         
         .feature p {
             color: #94a3b8;
-            font-size: 1rem;
+            font-size: clamp(0.9rem, 1.5vw, 1rem);
+            line-height: 1.5;
         }
         
         .links {
             background: rgba(248, 250, 252, 0.05);
             border-radius: 20px;
-            padding: 3rem;
+            padding: clamp(2rem, 4vw, 3rem);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(248, 250, 252, 0.1);
         }
@@ -206,25 +209,26 @@
             color: #f8fafc;
             margin-bottom: 2rem;
             text-align: center;
-            font-size: 1.5rem;
+            font-size: clamp(1.3rem, 2.5vw, 1.5rem);
             font-weight: 600;
         }
         
         .link-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
+            gap: clamp(1rem, 2vw, 1.5rem);
         }
         
         .link {
             background: rgba(248, 250, 252, 0.1);
             color: #f8fafc;
             text-decoration: none;
-            padding: 1.5rem;
+            padding: clamp(1rem, 2vw, 1.5rem);
             border-radius: 12px;
             transition: all 0.3s ease;
             border: 1px solid rgba(248, 250, 252, 0.2);
             text-align: center;
+            display: block;
         }
         
         .link:hover {
@@ -235,20 +239,23 @@
         
         .link strong {
             display: block;
-            font-size: 1.1rem;
+            font-size: clamp(1rem, 1.8vw, 1.1rem);
             margin-bottom: 0.5rem;
+            line-height: 1.3;
         }
         
         .link small {
             color: #94a3b8;
-            font-size: 0.9rem;
+            font-size: clamp(0.8rem, 1.5vw, 0.9rem);
+            line-height: 1.3;
         }
         
         .footer {
             margin-top: 4rem;
             text-align: center;
             color: #64748b;
-            font-size: 0.95rem;
+            font-size: clamp(0.8rem, 1.5vw, 0.95rem);
+            line-height: 1.5;
         }
         
         .footer p {
@@ -258,37 +265,80 @@
         .footer a {
             color: #94a3b8;
             text-decoration: none;
+            word-break: break-word;
         }
         
         .footer a:hover {
             color: #f8fafc;
         }
         
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2.5rem;
+        /* Mobile-first adjustments */
+        @media (max-width: 767px) {
+            .metrics-preview {
+                grid-template-columns: 1fr;
             }
             
+            .features {
+                grid-template-columns: 1fr;
+            }
+            
+            .link-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            /* Adjust stroke-dasharray for mobile circles */
+            .strain .circle-progress {
+                stroke-dasharray: 150, 188;
+            }
+            
+            .recovery .circle-progress {
+                stroke-dasharray: 170, 188;
+            }
+            
+            .sleep .circle-progress {
+                stroke-dasharray: 164, 188;
+            }
+        }
+        
+        /* Tablet and desktop adjustments */
+        @media (min-width: 768px) {
             .container {
-                padding: 2rem 1rem;
-            }
-            
-            .coming-soon {
                 padding: 3rem 2rem;
             }
             
+            .header {
+                margin-bottom: 4rem;
+            }
+            
+            /* Desktop circle values */
+            .strain .circle-progress {
+                stroke-dasharray: 220, 283;
+            }
+            
+            .recovery .circle-progress {
+                stroke-dasharray: 254, 283;
+            }
+            
+            .sleep .circle-progress {
+                stroke-dasharray: 212, 283;
+            }
+        }
+        
+        /* Very small screens */
+        @media (max-width: 320px) {
+            .container {
+                padding: 1.5rem 0.5rem;
+            }
+            
+            .coming-soon, .links {
+                padding: 1.5rem 1rem;
+            }
+        }
+        
+        /* Large screens */
+        @media (min-width: 1200px) {
             .metrics-preview {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-            
-            .circle-chart {
-                width: 100px;
-                height: 100px;
-            }
-            
-            .metric-value {
-                font-size: 1.5rem;
+                grid-template-columns: repeat(3, 1fr);
             }
         }
     </style>
@@ -307,11 +357,11 @@
             <div class="metrics-preview">
                 <div class="metric-circle strain">
                     <div class="circle-chart">
-                        <svg width="120" height="120">
+                        <svg width="100%" height="100%" viewBox="0 0 120 120">
                             <circle class="circle-bg" cx="60" cy="60" r="45"/>
                             <circle class="circle-progress" cx="60" cy="60" r="45"/>
                         </svg>
-                        <div class="metric-value">14.2</div>
+                        <div class="metric-value">17.2</div>
                     </div>
                     <h3>Strain</h3>
                     <p>Cardiovascular exertion analysis from workouts and daily movement</p>
@@ -319,7 +369,7 @@
                 
                 <div class="metric-circle recovery">
                     <div class="circle-chart">
-                        <svg width="120" height="120">
+                        <svg width="100%" height="100%" viewBox="0 0 120 120">
                             <circle class="circle-bg" cx="60" cy="60" r="45"/>
                             <circle class="circle-progress" cx="60" cy="60" r="45"/>
                         </svg>
@@ -331,11 +381,11 @@
                 
                 <div class="metric-circle sleep">
                     <div class="circle-chart">
-                        <svg width="120" height="120">
+                        <svg width="100%" height="100%" viewBox="0 0 120 120">
                             <circle class="circle-bg" cx="60" cy="60" r="45"/>
                             <circle class="circle-progress" cx="60" cy="60" r="45"/>
                         </svg>
-                        <div class="metric-value">87%</div>
+                        <div class="metric-value">80%</div>
                     </div>
                     <h3>Sleep</h3>
                     <p>Comprehensive sleep analysis tracking stages, efficiency, and readiness impact</p>
