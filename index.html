@@ -109,12 +109,12 @@
         .circle-bg {
             fill: none;
             stroke: #e2e8f0;
-            stroke-width: clamp(6, 1vw, 8);
+            stroke-width: 10;
         }
         
         .circle-progress {
             fill: none;
-            stroke-width: clamp(6, 1vw, 8);
+            stroke-width: 10;
             stroke-linecap: round;
             transform: rotate(-90deg);
             transform-origin: 50% 50%;
@@ -123,14 +123,17 @@
         
         .strain .circle-progress {
             stroke: #ef4444;
+            stroke-dasharray: 175, 251;
         }
         
         .recovery .circle-progress {
             stroke: #22c55e;
+            stroke-dasharray: 226, 251;
         }
         
         .sleep .circle-progress {
             stroke: #3b82f6;
+            stroke-dasharray: 218, 251;
         }
         
         .metric-value {
@@ -138,7 +141,7 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+            font-size: clamp(1rem, 2vw, 1.4rem);
             font-weight: 700;
             color: #f8fafc;
         }
@@ -286,17 +289,8 @@
                 grid-template-columns: 1fr;
             }
             
-            /* Adjust stroke-dasharray for mobile circles */
-            .strain .circle-progress {
-                stroke-dasharray: 150, 188;
-            }
-            
-            .recovery .circle-progress {
-                stroke-dasharray: 170, 188;
-            }
-            
-            .sleep .circle-progress {
-                stroke-dasharray: 164, 188;
+            .circle-bg, .circle-progress {
+                stroke-width: 10;
             }
         }
         
@@ -310,17 +304,8 @@
                 margin-bottom: 4rem;
             }
             
-            /* Desktop circle values */
-            .strain .circle-progress {
-                stroke-dasharray: 220, 283;
-            }
-            
-            .recovery .circle-progress {
-                stroke-dasharray: 254, 283;
-            }
-            
-            .sleep .circle-progress {
-                stroke-dasharray: 212, 283;
+            .circle-bg, .circle-progress {
+                stroke-width: 14;
             }
         }
         
@@ -358,10 +343,10 @@
                 <div class="metric-circle strain">
                     <div class="circle-chart">
                         <svg width="100%" height="100%" viewBox="0 0 120 120">
-                            <circle class="circle-bg" cx="60" cy="60" r="45"/>
-                            <circle class="circle-progress" cx="60" cy="60" r="45"/>
+                            <circle class="circle-bg" cx="60" cy="60" r="40"/>
+                            <circle class="circle-progress" cx="60" cy="60" r="40"/>
                         </svg>
-                        <div class="metric-value">17.2</div>
+                        <div class="metric-value">14.2</div>
                     </div>
                     <h3>Strain</h3>
                     <p>Cardiovascular exertion analysis from workouts and daily movement</p>
@@ -370,8 +355,8 @@
                 <div class="metric-circle recovery">
                     <div class="circle-chart">
                         <svg width="100%" height="100%" viewBox="0 0 120 120">
-                            <circle class="circle-bg" cx="60" cy="60" r="45"/>
-                            <circle class="circle-progress" cx="60" cy="60" r="45"/>
+                            <circle class="circle-bg" cx="60" cy="60" r="40"/>
+                            <circle class="circle-progress" cx="60" cy="60" r="40"/>
                         </svg>
                         <div class="metric-value">90%</div>
                     </div>
@@ -382,10 +367,10 @@
                 <div class="metric-circle sleep">
                     <div class="circle-chart">
                         <svg width="100%" height="100%" viewBox="0 0 120 120">
-                            <circle class="circle-bg" cx="60" cy="60" r="45"/>
-                            <circle class="circle-progress" cx="60" cy="60" r="45"/>
+                            <circle class="circle-bg" cx="60" cy="60" r="40"/>
+                            <circle class="circle-progress" cx="60" cy="60" r="40"/>
                         </svg>
-                        <div class="metric-value">80%</div>
+                        <div class="metric-value">87%</div>
                     </div>
                     <h3>Sleep</h3>
                     <p>Comprehensive sleep analysis tracking stages, efficiency, and readiness impact</p>
