@@ -3,403 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zenith Wellness Metrics</title>
+    <title>Zenith Wellness</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.6;
-            color: #1a202c;
-            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            font-family: 'Poppins', sans-serif;
+            background: #004038;
             min-height: 100vh;
-            overflow-x: hidden;
-        }
-        
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 2rem 1rem;
-        }
-        
-        .header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-        
-        h1 {
-            color: #f8fafc;
-            font-size: clamp(2.2rem, 6vw, 3.5rem);
-            margin-bottom: 1rem;
-            font-weight: 600;
-            letter-spacing: -0.025em;
-            line-height: 1.1;
-        }
-        
-        .tagline {
-            color: #94a3b8;
-            font-size: clamp(1rem, 3vw, 1.3rem);
-            font-weight: 300;
-            margin-bottom: 3rem;
-            line-height: 1.4;
-        }
-        
-        .coming-soon {
-            background: rgba(30, 41, 59, 0.95);
-            border-radius: 20px;
-            padding: clamp(2rem, 5vw, 4rem) clamp(1.5rem, 4vw, 3rem);
-            margin-bottom: 3rem;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-            border: 1px solid rgba(248, 250, 252, 0.1);
-            text-align: center;
-        }
-        
-        .coming-soon h2 {
-            color: #f8fafc;
-            margin-bottom: 1rem;
-            font-size: clamp(1.6rem, 4vw, 2.2rem);
-            font-weight: 600;
-            line-height: 1.2;
-        }
-        
-        .coming-soon p {
-            color: #94a3b8;
-            font-size: clamp(1rem, 2.5vw, 1.2rem);
-            margin-bottom: 3rem;
-            line-height: 1.7;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .metrics-preview {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: clamp(1rem, 3vw, 2rem);
-            margin-bottom: 2rem;
-        }
-        
-        .metric-circle {
-            background: rgba(30, 41, 59, 0.7);
-            border-radius: 15px;
-            padding: clamp(1.5rem, 3vw, 2rem);
-            text-align: center;
-            position: relative;
-            border: 1px solid rgba(248, 250, 252, 0.2);
-            transition: all 0.3s ease;
-        }
-        
-        .metric-circle:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(51, 65, 85, 0.15);
-        }
-        
-        .circle-chart {
-            width: clamp(100px, 15vw, 120px);
-            height: clamp(100px, 15vw, 120px);
-            margin: 0 auto 1.5rem;
-            position: relative;
-        }
-        
-        .circle-bg {
-            fill: none;
-            stroke: #e2e8f0;
-            stroke-width: 10;
-        }
-        
-        .circle-progress {
-            fill: none;
-            stroke-width: 10;
-            stroke-linecap: round;
-            transform: rotate(-90deg);
-            transform-origin: 50% 50%;
-            transition: stroke-dasharray 0.3s ease;
-        }
-        
-        .strain .circle-progress {
-            stroke: #ef4444;
-            stroke-dasharray: 175, 251;
-        }
-        
-        .recovery .circle-progress {
-            stroke: #22c55e;
-            stroke-dasharray: 226, 251;
-        }
-        
-        .sleep .circle-progress {
-            stroke: #3b82f6;
-            stroke-dasharray: 218, 251;
-        }
-        
-        .metric-value {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: clamp(1rem, 2vw, 1.4rem);
-            font-weight: 700;
-            color: #f8fafc;
-        }
-        
-        .metric-circle h3 {
-            color: #f8fafc;
-            margin-bottom: 0.5rem;
-            font-size: clamp(1.1rem, 2vw, 1.3rem);
-            font-weight: 600;
-        }
-        
-        .metric-circle p {
-            color: #94a3b8;
-            font-size: clamp(0.85rem, 1.5vw, 0.95rem);
-            margin: 0;
-            line-height: 1.4;
-        }
-        
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: clamp(1.5rem, 3vw, 2rem);
-            margin-bottom: 3rem;
-        }
-        
-        .feature {
-            background: rgba(248, 250, 252, 0.05);
-            padding: clamp(1.5rem, 3vw, 2rem);
-            border-radius: 15px;
-            border: 1px solid rgba(248, 250, 252, 0.1);
-            backdrop-filter: blur(5px);
-        }
-        
-        .feature-icon {
-            width: clamp(40px, 8vw, 50px);
-            height: clamp(40px, 8vw, 50px);
-            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
-            border-radius: 12px;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
+            padding: 2rem;
+        }
+
+        .logo {
+            width: 150px;
+            height: auto;
             margin-bottom: 1.5rem;
-            font-size: clamp(1.1rem, 2vw, 1.3rem);
         }
-        
-        .feature h3 {
-            color: #f8fafc;
-            margin-bottom: 0.8rem;
-            font-size: clamp(1rem, 2vw, 1.2rem);
+
+        h1 {
+            color: #fff;
+            font-size: 2.5rem;
             font-weight: 600;
+            margin-bottom: 0.5rem;
         }
-        
-        .feature p {
-            color: #94a3b8;
-            font-size: clamp(0.9rem, 1.5vw, 1rem);
-            line-height: 1.5;
+
+        .coming-soon {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.2rem;
+            font-weight: 300;
+            margin-bottom: 1.5rem;
         }
-        
-        .links {
-            background: rgba(248, 250, 252, 0.05);
-            border-radius: 20px;
-            padding: clamp(2rem, 4vw, 3rem);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(248, 250, 252, 0.1);
-        }
-        
-        .links h3 {
-            color: #f8fafc;
-            margin-bottom: 2rem;
-            text-align: center;
-            font-size: clamp(1.3rem, 2.5vw, 1.5rem);
-            font-weight: 600;
-        }
-        
-        .link-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: clamp(1rem, 2vw, 1.5rem);
-        }
-        
-        .link {
-            background: rgba(248, 250, 252, 0.1);
-            color: #f8fafc;
+
+        .waitlist-btn {
+            background: #fff;
+            color: #004038;
+            padding: 0.75rem 2rem;
+            border-radius: 50px;
             text-decoration: none;
-            padding: clamp(1rem, 2vw, 1.5rem);
-            border-radius: 12px;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(248, 250, 252, 0.2);
-            text-align: center;
-            display: block;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+            margin-bottom: 3rem;
         }
-        
-        .link:hover {
-            background: rgba(248, 250, 252, 0.15);
+
+        .waitlist-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
         }
-        
-        .link strong {
-            display: block;
-            font-size: clamp(1rem, 1.8vw, 1.1rem);
-            margin-bottom: 0.5rem;
-            line-height: 1.3;
-        }
-        
-        .link small {
-            color: #94a3b8;
-            font-size: clamp(0.8rem, 1.5vw, 0.9rem);
-            line-height: 1.3;
-        }
-        
+
         .footer {
-            margin-top: 4rem;
-            text-align: center;
-            color: #64748b;
-            font-size: clamp(0.8rem, 1.5vw, 0.95rem);
-            line-height: 1.5;
+            margin-top: 3rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
         }
-        
-        .footer p {
-            margin-bottom: 0.5rem;
+
+        .links {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
         }
-        
-        .footer a {
-            color: #94a3b8;
+
+        .links a {
+            color: rgba(255, 255, 255, 0.6);
             text-decoration: none;
-            word-break: break-word;
+            font-size: 0.85rem;
+            transition: color 0.2s;
         }
-        
-        .footer a:hover {
-            color: #f8fafc;
+
+        .links a:hover {
+            color: #fff;
         }
-        
-        /* Mobile-first adjustments */
-        @media (max-width: 767px) {
-            .metrics-preview {
-                grid-template-columns: 1fr;
-            }
-            
-            .features {
-                grid-template-columns: 1fr;
-            }
-            
-            .link-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .circle-bg, .circle-progress {
-                stroke-width: 10;
-            }
+
+        .coffee-link img {
+            height: 40px;
+            transition: transform 0.2s;
         }
-        
-        /* Tablet and desktop adjustments */
-        @media (min-width: 768px) {
-            .container {
-                padding: 3rem 2rem;
-            }
-            
-            .header {
-                margin-bottom: 4rem;
-            }
-            
-            .circle-bg, .circle-progress {
-                stroke-width: 14;
-            }
-        }
-        
-        /* Very small screens */
-        @media (max-width: 320px) {
-            .container {
-                padding: 1.5rem 0.5rem;
-            }
-            
-            .coming-soon, .links {
-                padding: 1.5rem 1rem;
-            }
-        }
-        
-        /* Large screens */
-        @media (min-width: 1200px) {
-            .metrics-preview {
-                grid-template-columns: repeat(3, 1fr);
-            }
+
+        .coffee-link:hover img {
+            transform: translateY(-2px);
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>Zenith Wellness Metrics</h1>
-            <p class="tagline">Peak Wellness, Peak Performance, Peak You</p>
-        </div>
-        
-        <div class="coming-soon">
-            <h2>Coming Soon</h2>
-            <p>Peak Wellness Through Intelligent Analytics. Transform raw health data into the insights that matter. Bring your wearables, we'll bring the insights and analysis that guide you to peak wellness and peak performance.</p>
-            
-            <div class="metrics-preview">
-                <div class="metric-circle strain">
-                    <div class="circle-chart">
-                        <svg width="100%" height="100%" viewBox="0 0 120 120">
-                            <circle class="circle-bg" cx="60" cy="60" r="40"/>
-                            <circle class="circle-progress" cx="60" cy="60" r="40"/>
-                        </svg>
-                        <div class="metric-value">14.2</div>
-                    </div>
-                    <h3>Strain</h3>
-                    <p>Cardiovascular exertion analysis from workouts and daily movement</p>
-                </div>
-                
-                <div class="metric-circle recovery">
-                    <div class="circle-chart">
-                        <svg width="100%" height="100%" viewBox="0 0 120 120">
-                            <circle class="circle-bg" cx="60" cy="60" r="40"/>
-                            <circle class="circle-progress" cx="60" cy="60" r="40"/>
-                        </svg>
-                        <div class="metric-value">90%</div>
-                    </div>
-                    <h3>Recovery</h3>
-                    <p>Physiological assessment of how prepared you are for physical and mental demands</p>
-                </div>
-                
-                <div class="metric-circle sleep">
-                    <div class="circle-chart">
-                        <svg width="100%" height="100%" viewBox="0 0 120 120">
-                            <circle class="circle-bg" cx="60" cy="60" r="40"/>
-                            <circle class="circle-progress" cx="60" cy="60" r="40"/>
-                        </svg>
-                        <div class="metric-value">87%</div>
-                    </div>
-                    <h3>Sleep</h3>
-                    <p>Comprehensive sleep analysis tracking stages, efficiency, and readiness impact</p>
-                </div>
-            </div>
-        </div>
-        
+    <img src="logo/ZenithWellnessLogo.png" alt="Zenith Wellness" class="logo">
+    <h1>Zenith Wellness</h1>
+    <p class="coming-soon">Coming Soon</p>
+    <a href="#" class="waitlist-btn">Join the Waitlist</a>
+
+    <div class="footer">
         <div class="links">
-            <h3>Important Information</h3>
-            <div class="link-grid">
-                <a href="/privacy" class="link">
-                    <strong>Privacy Policy</strong>
-                    <small>How we protect your data</small>
-                </a>
-                <a href="/contact" class="link">
-                    <strong>Contact Us</strong>
-                    <small>Get in touch</small>
-                </a>
-                <a href="/data-requests" class="link">
-                    <strong>Data Requests</strong>
-                    <small>Manage your information</small>
-                </a>
-            </div>
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="eula.html">EULA</a>
+            <a href="terms-and-conditions.html">Terms & Conditions</a>
+            <a href="contact.html">Contact Us</a>
         </div>
-        
-        <div class="footer">
-            <p>&copy; 2025 Zenith Wellness Metrics, LLC. All rights reserved.</p>
-            <p>Contact: <a href="mailto:support@zenithwellnessmetrics.com">support@zenithwellnessmetrics.com</a></p>
-        </div>
+        <a href="https://buymeacoffee.com/zenithwellness" target="_blank" class="coffee-link">
+            <img src="buyMeACoffee.png" alt="Buy Me a Coffee">
+        </a>
     </div>
 </body>
 </html>

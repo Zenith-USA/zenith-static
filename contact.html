@@ -3,235 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - Zenith Wellness Metrics</title>
+    <title>Contact Us - Zenith Wellness</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.6;
-            color: #1a202c;
-            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            font-family: 'Poppins', sans-serif;
+            background: #004038;
             min-height: 100vh;
-            padding: 2rem 0;
-        }
-        
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-        
-        .header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-        
-        .logo {
-            background: rgba(248, 250, 252, 0.1);
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            margin: 0 auto 1rem;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #f8fafc;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-            border: 1px solid rgba(248, 250, 252, 0.2);
+            padding: 2rem;
         }
-        
+
         h1 {
-            color: #f8fafc;
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
+            color: #fff;
+            font-size: 2rem;
             font-weight: 600;
-            letter-spacing: -0.025em;
-        }
-        
-        .subtitle {
-            color: #94a3b8;
-            font-size: 1.1rem;
-            font-weight: 300;
-        }
-        
-        .additional-info {
-            background: rgba(248, 250, 252, 0.05);
-            border-radius: 15px;
-            padding: 2rem;
             margin-bottom: 2rem;
-            backdrop-filter: blur(5px);
-            border: 1px solid rgba(248, 250, 252, 0.1);
         }
-        
-        .additional-info h3 {
-            color: #f8fafc;
-            margin-bottom: 1rem;
-            font-weight: 600;
-        }
-        
-        .additional-info p {
-            color: #94a3b8;
-            margin-bottom: 0.5rem;
-        }
-        
-        .help-topics {
-            background: rgba(248, 250, 252, 0.05);
-            border-radius: 15px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            backdrop-filter: blur(5px);
-            border: 1px solid rgba(248, 250, 252, 0.1);
-        }
-        
-        .help-topics h3 {
-            color: #f8fafc;
-            margin-bottom: 1.5rem;
-            font-weight: 600;
-        }
-        
-        .topic-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-        }
-        
-        .topic-item {
-            background: rgba(248, 250, 252, 0.03);
-            border-radius: 10px;
-            padding: 1.5rem;
-            border: 1px solid rgba(248, 250, 252, 0.1);
-            transition: all 0.3s ease;
-        }
-        
-        .topic-item:hover {
-            background: rgba(248, 250, 252, 0.08);
-            transform: translateY(-2px);
-        }
-        
-        .topic-item h4 {
-            color: #f8fafc;
-            margin-bottom: 0.8rem;
-            font-size: 1.1rem;
-            font-weight: 600;
-        }
-        
-        .topic-item p {
-            color: #94a3b8;
-            font-size: 0.9rem;
-            margin: 0;
-        }
-        
-        .back-link {
-            text-align: center;
-            margin-top: 2rem;
-        }
-        
-        .back-link a {
-            color: #f8fafc;
-            text-decoration: none;
-            font-weight: 500;
-            padding: 8px 16px;
-            border-radius: 6px;
-            background: rgba(248, 250, 252, 0.1);
-            transition: background 0.3s ease;
-            border: 1px solid rgba(248, 250, 252, 0.2);
-        }
-        
-        .back-link a:hover {
-            background: rgba(248, 250, 252, 0.2);
-        }
-        
+
         .contact-info {
-            background: rgba(248, 250, 252, 0.05);
-            border-radius: 15px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            backdrop-filter: blur(5px);
-            border: 1px solid rgba(248, 250, 252, 0.1);
+            text-align: center;
         }
-        
-        .contact-info h3 {
-            color: #f8fafc;
-            margin-bottom: 1rem;
-            font-weight: 600;
-        }
-        
+
         .contact-info p {
-            color: #94a3b8;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1rem;
             margin-bottom: 0.5rem;
         }
-        
+
         .contact-info a {
-            color: #94a3b8;
+            color: #fff;
             text-decoration: none;
         }
-        
+
         .contact-info a:hover {
-            color: #f8fafc;
             text-decoration: underline;
         }
-        
-        @media (max-width: 768px) {
-            .container {
-                padding: 0 1rem;
-            }
-            
-            .form-container {
-                padding: 2rem 1.5rem;
-            }
-            
-            h1 {
-                font-size: 2rem;
-            }
+
+        .back {
+            margin-top: 3rem;
+        }
+
+        .back a {
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .back a:hover {
+            color: #fff;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>Contact Us</h1>
-            <p class="subtitle">We'd love to hear from you</p>
-        </div>
-        
-        <div class="contact-info">
-            <h3>📧 Get in Touch</h3>
-            <p><strong>Privacy & Data Questions:</strong> <a href="mailto:privacy@zenithwellnessmetrics.com">privacy@zenithwellnessmetrics.com</a></p>
-            <p><strong>General Support:</strong> <a href="mailto:support@zenithwellnessmetrics.com">support@zenithwellnessmetrics.com</a></p>
-            <p><strong>Data Requests:</strong> <a href="mailto:data-request@zenithwellnessmetrics.com">data-request@zenithwellnessmetrics.com</a></p>
-        </div>
-        
-        <div class="help-topics">
-            <h3>🔍 Common Inquiries</h3>
-            <div class="topic-grid">
-                <div class="topic-item">
-                    <h4>Privacy Questions</h4>
-                    <p>Questions about how we handle your health data, privacy policies, or data protection.</p>
-                </div>
-                <div class="topic-item">
-                    <h4>Data Requests</h4>
-                    <p>Access, modify, or delete your personal information. Exercise your privacy rights.</p>
-                </div>
-                <div class="topic-item">
-                    <h4>General Support</h4>
-                    <p>App support, technical issues, account questions, or general inquiries.</p>
-                </div>
-                <div class="topic-item">
-                    <h4>Partnerships</h4>
-                    <p>Business partnerships, integrations, or collaboration opportunities.</p>
-                </div>
-            </div>
-        </div>
-        
-        <div class="back-link">
-            <a href="/">&larr; Back to Home</a>
-        </div>
+    <h1>Contact Us</h1>
+    <div class="contact-info">
+        <p>Email: <a href="mailto:support@zenithwellness.health">support@zenithwellness.health</a></p>
+    </div>
+    <div class="back">
+        <a href="index.html">&larr; Back</a>
     </div>
 </body>
 </html>
